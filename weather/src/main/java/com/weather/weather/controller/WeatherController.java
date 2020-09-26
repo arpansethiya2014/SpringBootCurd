@@ -68,4 +68,9 @@ public class WeatherController {
 	public Weather findById(@PathVariable("id") long id) {
 		return weatherService.findById(id).orElseThrow(()-> new ResourceNotFoundException("Id " + id + " not found"));
 	}
+	
+	@GetMapping("/weathers/{city}")
+	public Weather findByCity(@PathVariable("city") String city) {
+		return weatherService.findByCity(city).orElseThrow(()-> new ResourceNotFoundException(" City " + city + " not found"));
+	}
 }
