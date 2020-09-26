@@ -13,4 +13,6 @@ public interface WeatherService {
 	Optional<Weather> findById(long id);
 	
 	List<Weather> findAll();
+	
+	Optional<Weather> findByCity(String city);
 }

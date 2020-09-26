@@ -37,6 +37,11 @@ public class WeatherServiceImpl implements WeatherService{
 		return weatherRepo.findAll();
 	}
 
+	@Override
+	public Optional<Weather> findByCity(String city) {
+		return weatherRepo.findByCity(city);
+	}
+
 	
 	
 }
