@@ -63,4 +63,9 @@ public class WeatherController {
 	public List<Weather> findAll(){
 		return weatherService.findAll();
 	}
+	
+	@GetMapping("/weather/{id}")
+	public Weather findById(@PathVariable("id") long id) {
+		return weatherService.findById(id).orElseThrow(()-> new ResourceNotFoundException("Id " + id + " not found"));
+	}
 }
