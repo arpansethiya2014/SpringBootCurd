@@ -4,6 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedStoredProcedureQueries;
+import javax.persistence.NamedStoredProcedureQuery;
+import javax.persistence.ParameterMode;
+import javax.persistence.StoredProcedureParameter;
 
 import lombok.Data;
 import lombok.Getter;
@@ -13,6 +17,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @Data
 @Entity
+@NamedStoredProcedureQueries({
+	@NamedStoredProcedureQuery(name = "findByCountry", procedureName = "FindByCountry", parameters = {
+			@StoredProcedureParameter(mode = ParameterMode.IN, name = "weather_country", type = String.class) }, resultClasses = Weather.class) })
 public class Weather {
 
 	@Id

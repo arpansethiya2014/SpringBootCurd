@@ -15,4 +15,6 @@ public interface WeatherService {
 	List<Weather> findAll();
 	
 	Optional<Weather> findByCity(String city);
+	
+	List<Weather> findByCountryProcedure(String country);
 }

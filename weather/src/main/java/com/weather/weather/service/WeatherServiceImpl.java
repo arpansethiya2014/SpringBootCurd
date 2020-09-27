@@ -42,6 +42,11 @@ public class WeatherServiceImpl implements WeatherService{
 		return weatherRepo.findByCity(city);
 	}
 
+	@Override
+	public List<Weather> findByCountryProcedure(String country) {
+		return weatherRepo.findByCountryProcedure(country);
+	}
+
 	
 	
 }

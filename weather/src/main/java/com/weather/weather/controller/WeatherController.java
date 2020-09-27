@@ -73,4 +73,9 @@ public class WeatherController {
 	public Weather findByCity(@PathVariable("city") String city) {
 		return weatherService.findByCity(city).orElseThrow(()-> new ResourceNotFoundException(" City " + city + " not found"));
 	}
+	
+	@GetMapping("/findByCountry/{country}")
+	public List<Weather> findByCountry(@PathVariable("country") String country) {
+		return weatherService.findByCountryProcedure(country);
+	}
 }
