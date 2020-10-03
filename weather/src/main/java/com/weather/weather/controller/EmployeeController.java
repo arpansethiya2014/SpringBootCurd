@@ -66,4 +66,9 @@ public class EmployeeController {
 			return "Employee Mobile Number Update";
 		}).orElseThrow(() -> new RuntimeException("Id : " + id + "Not Found"));
 	}
+	
+	@GetMapping("/employeeMobile/{mobile}")
+	List<Employee> findByMobile(@PathVariable("mobile") String mobile){
+		return employeeService.findByMobile(mobile);
+	}
 }

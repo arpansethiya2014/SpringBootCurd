@@ -35,6 +35,11 @@ public class EmployeeServiceImpl implements EmployeeService{
 		return employeeRepo.findAll();
 	}
 
+	@Override
+	public List<Employee> findByMobile(String mobile) {
+		return employeeRepo.findByMobile(mobile);
+	}
+
 	
 	
 }

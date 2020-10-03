@@ -14,4 +14,6 @@ public interface EmployeeService {
 	
 	List<Employee> findAll();
 	
+	List<Employee> findByMobile(String mobile);
+	
 }
