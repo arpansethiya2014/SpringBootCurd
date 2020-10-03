@@ -36,21 +36,12 @@ public class ThirdPartyAPIs {
 	}
 	
 	public static void main(String[] args) throws Exception{
-		String response = getData();
-		
-		JSONParser jsonParser = new JSONParser();
-		Object obj = jsonParser.parse(response);
-		JSONObject jsonObject = (JSONObject) obj;
-		String name = (String) jsonObject.get("name");
-		long timezone = (long) jsonObject.get("timezone");
-		JSONObject main = (JSONObject) jsonObject.get("main");
-		double temp = (double) main.get("temp");
-		double temp_min = (double) main.get("temp_min");
-		double temp_max = (double) main.get("temp_max");
-		JSONObject sys = (JSONObject) jsonObject.get("sys");
-		String country = (String) sys.get("country");
-		
-		System.out.println("main : " + country);
+		JSONObject jsonObject = new JSONObject();
+		jsonObject.put("name", "Arpan");
+		jsonObject.put("mobile", "7869920537");
+		jsonObject.put("email", "arpan@gmail.com");
+		jsonObject.put("address", "Indore");
+		System.out.println(jsonObject);
 		
 	}
 }
